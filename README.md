@@ -1,7 +1,7 @@
 # EggTimerApp
 
 _____
-'''swift
+
 import UIKit
 import AVFoundation
 
@@ -47,4 +47,4 @@ class ViewController: UIViewController {
         
     }
 }
-'''
+
