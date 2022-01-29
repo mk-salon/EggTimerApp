@@ -1,7 +1,5 @@
 # EggTimerApp
 
-_____
-
 import UIKit
 import AVFoundation
 
@@ -16,14 +14,13 @@ class ViewController: UIViewController {
     var player: AVAudioPlayer!
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
-        
         timer.invalidate()
         let hardness = sender.currentTitle!
         totaltime = eggTimes[hardness]!
         titleLabel.text = hardness
         progressBar.progress = 0.0
         secondsPast = 0
-        
+    
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
@@ -31,12 +28,10 @@ class ViewController: UIViewController {
         if secondsPast < totaltime {
             secondsPast += 1
             progressBar.progress = secondsPast / totaltime
-    
         } else {
             timer.invalidate()
             titleLabel.text = "Done!"
-            playSound(soundName: "alarm_sound")
-            
+            playSound(soundName: "alarm_sound")  
         }
     }
     
@@ -47,4 +42,3 @@ class ViewController: UIViewController {
         
     }
 }
-
